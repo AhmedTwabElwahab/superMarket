@@ -1,0 +1,15 @@
+a#printInvoice
+{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+}
+@media print {
+    #Invoice
+    {
+        width: 500px;
+        padding: 10px;
+    }
+
+
+}
