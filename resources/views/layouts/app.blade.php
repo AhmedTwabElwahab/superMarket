@@ -31,7 +31,7 @@ $language = str_replace('_', '-', app()->getLocale());
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
-    <link href="{{asset('css/libraries/toastr/toastr.min.css')}}" rel="stylesheet"/>
+
     {{-- Start style include  --}}
     @isset($CSS)
         @if(file_exists(public_path().DIRECTORY_SEPARATOR.$CSS))

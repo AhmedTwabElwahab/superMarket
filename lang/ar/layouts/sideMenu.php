@@ -19,6 +19,8 @@ return array_merge(getLangError(), [
     'supplier'               => ' الموردين',
     'client'                 => ' العملاء',
     'report'                 => ' التقارير',
+    'users'                  => 'المستخدمين',
+    'settings'               => 'الاعدادات',
 
 
 ]);
