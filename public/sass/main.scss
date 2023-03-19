@@ -1,0 +1,182 @@
+$background-0: #eef4f5;
+$background-1: #fff;
+$background-aside: #11233b;
+$background-active-link: #141e2e;
+$background-form-control-focus: #161d26;
+$color-1: #fff;
+$color-2: #575f66;
+$border-color: #f1f1f1;
+$bs-table-hover-color: #f7f7f7!important;
+
+*{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+html,body
+{
+    background: #eef4f5 !important;
+}
+
+.aside,
+.main-content,
+.top-nav {
+    transition: .2s ease-in-out;
+}
+.main-box
+{
+    background: $background-1;
+    border-radius: 5px;
+    box-shadow: 0 0 transparent,0 0 transparent,0px 13px 19px rgba(28,76,159,0.058823529411764705);
+}
+.input-hide
+{
+    background: transparent;
+    border: none;
+    color: #000000;
+    outline: none;
+}
+.badge_c
+{
+    background: #dc3545;
+    border-radius: 5px;
+    color: #ffffff;
+    width: 125px;
+    height: 30px;
+    text-align: center;
+    padding: 4px;
+}
+.badge_d
+{
+    background: #1e6f01;
+    border-radius: 5px;
+    color: #ffffff;
+    width: 125px;
+    height: 30px;
+    text-align: center;
+    padding: 4px;
+}
+.divider
+{
+    background-image: linear-gradient(90deg ,transparent,#88a6a6);
+    right: auto;
+    left: 10px;
+    opacity: .1;
+    margin: 0px 0px ;
+    min-height: 2px;
+}
+.divider-right
+{
+    background-image: linear-gradient(270deg ,transparent,#88a6a6);
+    right: auto;
+    left: 10px;
+    opacity: .1;
+    margin: 0px 0px ;
+    min-height: 2px;
+}
+
+.mainContainer
+{
+    .aside
+    {
+        width: 220px;
+        background: #ddeaea;
+        min-height: 100vh;
+        position: fixed;
+        z-index: 900;
+        .aside-menu
+        {
+            .nav
+            {
+                .nav-item
+                {
+                    .hidden
+                    {
+                        display: none;
+                    }
+                }
+            }
+        }
+        div:first-child a img
+        {
+            width: 80px;
+            height: 80px;
+            color: $background-1;
+            border-radius: 50%;
+        }
+        &.active
+        {
+            right: 0px;
+        }
+        &.in-active
+        {
+            right: -220px;
+        }
+    }
+    .main-content
+    {
+        overflow: hidden;
+        width: calc(100% - 220px);
+        margin-right: 220px;
+        &.active
+        {
+            width: 100% !important;
+            margin-right: 0px !important;
+        }
+        .top-nav
+        {
+            height: 45px;
+            position: fixed;
+            background: $background-1;
+            width: calc(100% - 220px);
+            z-index: 99;
+            border-bottom: 1px solid $border-color;
+            .asideToggle
+            {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .container-body
+        {
+            margin: 5px 5px 5px 5px;
+            background: $background-1;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 1px 0px 8px 0px #ccccccc7;
+            padding: 12px;
+        }
+
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2196f3;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+

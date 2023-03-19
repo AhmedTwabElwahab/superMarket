@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEI,kBACA;EACE,WAAW,EAAE,GAAG;AAElB,kBAAE;EACE,OAAO,EAAE,WAAW",
+"sources": ["../../sass/saleInvoice/index.scss"],
+"names": [],
+"file": "index.css"
+}

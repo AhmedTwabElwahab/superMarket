@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cACA;EACI,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;;AAEnB,YAAa;EACT,QACA;IACI,KAAK,EAAE,KAAK;IACZ,OAAO,EAAE,IAAI",
+"sources": ["../../sass/saleInvoice/show.scss"],
+"names": [],
+"file": "show.css"
+}
