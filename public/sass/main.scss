@@ -88,6 +88,25 @@ html,body
             {
                 .nav-item
                 {
+                    a
+                    {
+                        color: #070505;
+                    }
+                    &.active
+                    {
+                        background: #00800073;
+                        border-radius: 5px;
+                        a
+                        {
+                            color: rgba(13, 110, 253, 0.94);
+                        }
+                    }
+                    &:hover
+                    {
+                        border-radius: 5px;
+                        background: #00800073;
+                    }
+
                     .hidden
                     {
                         display: none;
