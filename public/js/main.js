@@ -1,9 +1,10 @@
 
 $(document).ready(function() {
-    let button = $('#asideToggle');
-    let aside  = $('.aside');
-    let topNav  = $('.top-nav');
+    let button      = $('#asideToggle');
+    let aside       = $('.aside');
+    let topNav      = $('.top-nav');
     let mainContant = $('.main-content');
+
 
     button.on('click',function ()
     {
@@ -20,6 +21,16 @@ $(document).ready(function() {
             topNav.removeClass('w-100');
         }
     });
+
+
+    // $('li.nav-item').click(function ()
+    // {
+    //     $('a[class=nav-link]').each(function()
+    //     {
+    //         $(this).removeClass('active');
+    //     });
+    //     $(this).addClass('active');
+    // });
 });
 
 

@@ -3,9 +3,7 @@
 
 html, body {
   background: #eef4f5 !important; }
-#toast-container{
-    z-index:9999;
-}
+
 .aside,
 .main-content,
 .top-nav {
@@ -62,6 +60,16 @@ html, body {
   min-height: 100vh;
   position: fixed;
   z-index: 900; }
+  .mainContainer .aside .aside-menu .nav .nav-item a {
+    color: #070505; }
+  .mainContainer .aside .aside-menu .nav .nav-item.active {
+    background: #00800073;
+    border-radius: 5px; }
+    .mainContainer .aside .aside-menu .nav .nav-item.active a {
+      color: rgba(13, 110, 253, 0.94); }
+  .mainContainer .aside .aside-menu .nav .nav-item:hover {
+    border-radius: 5px;
+    background: #00800073; }
   .mainContainer .aside .aside-menu .nav .nav-item .hidden {
     display: none; }
   .mainContainer .aside div:first-child a img {
