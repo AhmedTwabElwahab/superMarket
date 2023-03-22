@@ -12,11 +12,11 @@ use Illuminate\Http\RedirectResponse;
 
 class CategoryController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->init();
-    //     $this->middlewareInit();
-    // }
+     public function __construct()
+     {
+         $this->init();
+         $this->middlewareInit();
+     }
 
     public function index(Request $request)
     {

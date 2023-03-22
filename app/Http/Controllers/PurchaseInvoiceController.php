@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\DB;
 
 class PurchaseInvoiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->init();
+        $this->middlewareInit();
+    }
+
     public function index():View
     {
         $invoices = PurchaseInvoice::with(['supplier','user'])->paginate(APP_PAGINATE);

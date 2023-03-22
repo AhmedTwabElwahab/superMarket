@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 class SupplierController extends Controller
 {
-
     public function __construct()
     {
         $this->init();

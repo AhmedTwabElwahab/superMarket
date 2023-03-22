@@ -16,6 +16,12 @@ use Illuminate\Contracts\View\View;
 
 class SaleInvoiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->init();
+        $this->middlewareInit();
+    }
+
     public function index():View
     {
         $invoices = SaleInvoice::with(['client','user'])->paginate(APP_PAGINATE);
