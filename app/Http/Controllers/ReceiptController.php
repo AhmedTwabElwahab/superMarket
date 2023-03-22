@@ -15,11 +15,11 @@ use Exception;
 
 class ReceiptController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->init();
-    //     $this->middlewareInit();
-    // }
+     public function __construct()
+     {
+         $this->init();
+         $this->middlewareInit();
+     }
 
     public function index(): View
     {
@@ -27,7 +27,7 @@ class ReceiptController extends Controller
         return $this->view(compact('receipts'));
     }
 
-    
+
     public function create(Request $request): View
     {
         $type     = RECEIPT_IN;
@@ -40,13 +40,13 @@ class ReceiptController extends Controller
         return $this->view(compact('type','cash_box'));
     }
 
-    
+
     public function store(ReceiptRequest $request)
     {
         $this->init();
         DB::beginTransaction();
         try {
-            
+
             $receipt = Receipt::createReceipt($request);
             $type    = $request->input('type_id');
             $journal = Journal::createJournalEntry($receipt->id,$type,$receipt->description());
@@ -68,20 +68,20 @@ class ReceiptController extends Controller
         }
     }
 
-    
+
     public function show(Receipt $receipt)
     {
         //
     }
 
-    
+
     public function edit(Receipt $receipt)
     {
         $cash_box = Account::where('sub_account_id',CASH_BOX)->get();
         return $this->view(compact('receipt','cash_box'));
     }
 
-    
+
     public function update(ReceiptRequest $request, Receipt $receipt)
     {
         $this->init();
@@ -103,7 +103,7 @@ class ReceiptController extends Controller
         }
     }
 
-    
+
     public function destroy(Receipt $receipt)
     {
         $this->init();

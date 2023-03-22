@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\DB;
 class PurchaseReturnController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->init();
+        $this->middlewareInit();
+    }
+
     public function index():View
     {
         $invoices = PurchaseReturn::with(['supplier','user'])->paginate(APP_PAGINATE);

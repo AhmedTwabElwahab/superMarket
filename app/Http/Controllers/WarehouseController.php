@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class WarehouseController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->init();
-    //     $this->middlewareInit();
-    // }
+     public function __construct()
+     {
+         $this->init();
+         $this->middlewareInit();
+     }
 
     public function index()
     {

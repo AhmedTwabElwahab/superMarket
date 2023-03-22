@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\DB;
 class SaleReturnController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->init();
+        $this->middlewareInit();
+    }
+
+
     public function index(): View
     {
         $invoices = SaleReturn::with(['client','user'])->paginate(APP_PAGINATE);

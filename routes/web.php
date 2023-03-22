@@ -11,6 +11,7 @@ use App\Http\Controllers\SaleInvoiceController;
 use App\Http\Controllers\SaleReturnController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ReceiptController;
 use Illuminate\Support\Facades\Route;
@@ -27,10 +28,10 @@ Route::group(
 
     //Dashboard
     Route::get('/home',[Dashboard::class,'index'])->name('dashboard');
-
+    //user
+    Route::resource('/user', UserController::class);
     //client
     Route::resource('/client', ClientController::class);
-
     //supplier
     Route::resource('/supplier',SupplierController::class);
     //warehouse
@@ -46,11 +47,9 @@ Route::group(
     //Product
     Route::resource('/product', ProductController::class);
     Route::post('/getProduct',[ProductController::class,'getProduct']);
-
     //category
     Route::resource('/category', CategoryController::class)->except(['show']);
-
-    //client
+    //receipt
     Route::resource('/receipt', ReceiptController::class);
     //account post route
 

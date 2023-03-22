@@ -13,6 +13,12 @@ use Illuminate\Contracts\View\View;
 
 class AccountController extends Controller
 {
+    public function __construct()
+    {
+        $this->init();
+        $this->middlewareInit();
+    }
+
 
     public function index():View
     {
