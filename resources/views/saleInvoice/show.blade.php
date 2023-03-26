@@ -4,9 +4,7 @@
  * @var SaleInvoice $saleInvoice
  */
 use App\Models\SaleInvoice;
-
 ?>
-
 
 @extends('layouts.app')
 
@@ -16,7 +14,8 @@ use App\Models\SaleInvoice;
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{$lang->text('dashboard')}}</a></li>
-                <li class="breadcrumb-item"><a href="{{route('saleInvoice.index')}}">{{$lang->text('saleInvoice')}}</a></li>
+                <li class="breadcrumb-item"><a href="{{route('saleInvoice.index')}}">{{$lang->text('saleInvoice')}}</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page">{{$lang->text('show_invoice')}}</li>
             </ol>
         </nav>
@@ -36,121 +35,77 @@ use App\Models\SaleInvoice;
             <div class="col-12 divider" style="min-height: 2px;"></div>
         </div>
         <div class="invoice-wrap">
-            <div class="invoice-inner">
-                <table>
+            <div class="invoice_header">
+                <div class="left">
+                    {{ //TODO::APP_settings}}
+                    <h4>QuMarket</h4>
+                    <div>ش علي بن اب طالب</div>
+                    <div>قنا, قنا</div>
+                </div>
+                <div class="right">
+                    <div>
+                        <h4>فاتورة بيع</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="invoice_info">
+                <div class="left">
+                    <div class="fw-bold">العميل:</div>
+                    <div>محمد علي</div>
+                    <div>01011401555</div>
+                </div>
+                <div class="right">
+                    <div class="fw-bold">رقم فاتورة البيع# &nbsp;&nbsp; 2150</div>
+                    <div class="fw-bold">التاريخ# &nbsp;&nbsp; 23/10/2023</div>
+                </div>
+            </div>
+            <div class="invoice_body row">
+                <table class="table">
                     <tbody>
-                    <tr>
-                        <td class="text-left" valign="top">
-                            <p>
-                                <span class="bussines-name">ququMrket</span><br>
-                                ش علي بن اب طالب <br>
-                                قنا, قنا <br>
-                            </p>
-                        </td>
-                        <td class="text-right" valign="top">
-
-
-                            <h1>فاتورة شراء</h1>
-                        </td>
-
-                    </tr>
+                    {{ //TODO::loop product}}
+                        <tr class="table-header">
+                            <th>الصنف</th>
+                            <th style="width: 80px">سعر الوحدة</th>
+                            <th style="width: 40px">الكمية</th>
+                            <th style="width: 60px">الاجمالي</th>
+                        </tr>
+                        <tr>
+                            <td>بلح</td>
+                            <td style="width: 80px">15.20</td>
+                            <td style="width: 40px">5</td>
+                            <td style="width: 60px">76.00</td>
+                        </tr>
+                        <tr>
+                            <td>بلح</td>
+                            <td style="width: 80px">15.20</td>
+                            <td style="width: 40px">5</td>
+                            <td style="width: 60px">76.00</td>
+                        </tr>
+                        <tr>
+                            <td>بلح</td>
+                            <td style="width: 80px">15.20</td>
+                            <td style="width: 40px">5</td>
+                            <td style="width: 60px">76.00</td>
+                        </tr>
                     </tbody>
                 </table>
-                <div class="invoice-address">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td id="second_left" width="50%" class="text-left" valign="top">
-                                <p>
-                                    <strong>العميل:</strong><br/>
-                                    علي محمح<br/>
-                                    01011401564<br/>
-                                </p>
-                            </td>
-
-                            <td id="second_right" class="text-right">
-
-                                <table id="invoice_fields" border="0" cellspacing="0" cellpadding="0" class="text-right float-right">
-                                    <tbody>
-                                    <tr>
-                                        <td class="text-right"><strong>رقم فاتورة البيع#</strong></td>
-                                        <td style="padding-left:20px;" class="text-left">
-                                            1
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right"><strong>التاريخ</strong></td>
-                                        <td style="padding-left:20px;" class="text-left">23/01/2023</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+            </div>
+            <div class="invoice_footer">
+                <div class="space"></div>
+                <div class="total_invoice">
+                    <div>
+                        <div class="left fw-bold">الاجمالي:</div>
+                        <div class="right">15.00 ج.م</div>
+                    </div>
+                    <div>
+                        <div class="left fw-bold">المبلغ المدفوع:</div>
+                        <div class="right">-15.00 ج.م</div>
+                    </div>
+                    <div>
+                        <div class="left fw-bold">المبلغ المستحق:</div>
+                        <div class="right">0.00 ج.م</div>
+                    </div>
                 </div>
-                <table cellspacing="0" cellpadding="2" border="0" width="100%" id="listing_table"
-                       class="invoice-listing-table total-table" style="">
-                    <tbody>
-                    <tr>
-
-                        <th width="" bgcolor="#E5E5E5" style="border-left:1px solid #555;">البند</th>
-                        <th width="80" bgcolor="#E5E5E5">سعر الوحدة</th>
-                        <th width="40" bgcolor="#E5E5E5">الكمية</th>
-                        <th width="60" bgcolor="#E5E5E5">المجموع</th>
-                    </tr>
-                    <tr>
-                        <td width="">بلح</td>
-                        <td width="80">15.20</td>
-                        <td width="40">5</td>
-                        <td width="60">76.00</td>
-                    </tr>
-
-
-                    <tr class="total-row">
-                        <td style="border:none" bgcolor="#FFF" colspan="1"></td>
-                        <td style="border-left:none;border-right:none;" colspan="2"><strong>الإجمالي:</strong></td>
-                        <td style="border-left:none;border-right:none;" class="text-left">76.00&nbsp;ج.م</td>
-                    </tr>
-
-                    <tr>
-                        <td style="border:none" bgcolor="#FFF" colspan="1"></td>
-                        <td style="border-left:none;border-right:none;" colspan="2"><strong>مدفوعة:</strong></td>
-                        <td style="border-left:none;border-right:none;" class="text-left"><span dir="ltr">-76.00</span>&nbsp;ج.م
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:none" bgcolor="#FFF" colspan="1"></td>
-                        <td style="border-left:none;border-right:none;" colspan="2"><strong>المبلغ المستحق:</strong></td>
-                        <td style="border-left:none;border-right:none;" class="text-left">0.00&nbsp;ج.م</td>
-                    </tr>
-
-                    </tbody>
-                </table>
-
-                <br>
-                <br>
-                <div class="notes-block">
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tbody>
-                        <tr>
-                            <td>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <br>
-                <br>
-                <br>
             </div>
         </div>
-
-    </div>
-
-
-
 @endsection
-
-
-
