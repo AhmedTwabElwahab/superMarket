@@ -73,7 +73,6 @@ $language = str_replace('_', '-', app()->getLocale());
 <script src="{{asset('js/libraries/bootstrap/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/libraries/fontAwesome/all.min.js')}}"></script>
 <script src="{{asset('js/libraries/datatables/datatables.min.js')}}"></script>
-<script src="{{asset('js/libraries/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('js/libraries/datatables/DataTables-1.12.1/dataTables.bootstrap5.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 
@@ -86,19 +85,6 @@ $language = str_replace('_', '-', app()->getLocale());
 @endisset
 {{-- End script include  --}}
 {{-- End script--}}
-
-
-
-{{--@if(Session::has('success'))--}}
-{{--    <script>--}}
-{{--        Notify('{{Session::get('success')}}','success');--}}
-{{--    </script>--}}
-{{--@endif--}}
-{{--@if(Session::has('error'))--}}
-{{--    <script>--}}
-{{--        Notify('{{Session::get('error')}}','danger');--}}
-{{--    </script>--}}
-{{--@endif--}}
 
 
 </body>

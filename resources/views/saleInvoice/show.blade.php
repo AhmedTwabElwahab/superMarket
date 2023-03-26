@@ -1,8 +1,10 @@
 <?php
 /**
  *
- * @var \App\Models\SaleInvoice $saleInvoice
+ * @var SaleInvoice $saleInvoice
  */
+use App\Models\SaleInvoice;
+
 ?>
 
 
@@ -20,7 +22,6 @@
         </nav>
     </div>
     <div class="row container-body" id="Invoice">
-
         <div class="row d-print-none">
             <div class="col-md-6">
                 <div class="col-12 col-lg-4 py-3 px-3">
@@ -34,89 +35,117 @@
             </div>
             <div class="col-12 divider" style="min-height: 2px;"></div>
         </div>
-
-        <div class="row pb-2">
-            <div class="col-md-4">
-                <table class="table">
+        <div class="invoice-wrap">
+            <div class="invoice-inner">
+                <table>
                     <tbody>
                     <tr>
-                        <td>{{$lang->text('client')}}</td>
-                        <td>{{$saleInvoice->client->name}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{$lang->text('invoice_date')}}</td>
-                        <td>{{DateFormat($saleInvoice->created_at)}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{$lang->text('payment_type')}}</td>
-                        <td>{{$saleInvoice->PaymentType->name}}</td>
+                        <td class="text-left" valign="top">
+                            <p>
+                                <span class="bussines-name">ququMrket</span><br>
+                                ش علي بن اب طالب <br>
+                                قنا, قنا <br>
+                            </p>
+                        </td>
+                        <td class="text-right" valign="top">
+
+
+                            <h1>فاتورة شراء</h1>
+                        </td>
+
                     </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class="col-md-6 company_info">
+                <div class="invoice-address">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td id="second_left" width="50%" class="text-left" valign="top">
+                                <p>
+                                    <strong>العميل:</strong><br/>
+                                    علي محمح<br/>
+                                    01011401564<br/>
+                                </p>
+                            </td>
 
-            </div>
-        </div>
+                            <td id="second_right" class="text-right">
 
-        <table class="table table-bordered table-sm text-center">
-            <thead>
-            <tr>
-                <th>{{'م'}}</th>
-                <th>{{__('saleInvoice/create.barcode')}}</th>
-                <th>{{__('saleInvoice/create.name_product')}}</th>
-                <th>{{__('saleInvoice/create.product_unit')}}</th>
-                <th>{{__('saleInvoice/create.quantity')}}</th>
-                <th>{{__('saleInvoice/create.sale_price')}}</th>
-                <th>{{__('saleInvoice/create.total')}}</th>
-            </tr>
-            </thead>
-            <tbody>
-            @isset($saleInvoice->Details)
-                @foreach($saleInvoice->Details as $index => $Detail)
-                    <tr>
-                        <td>{{$index}}</td>
-                        <td>{{$Detail -> barcode}}</td>
-                        <td>{{$Detail -> Product->name}}</td>
-                        <td>{{$Detail -> Product->unit->name}}</td>
-                        <td>{{floatval($Detail -> quantity)}}</td>
-                        <td>{{floatval($Detail -> price)}}</td>
-                        <td>{{floatval($Detail -> price * $Detail ->quantity)}}</td>
-                    </tr>
-                @endforeach
-            @endisset
-            </tbody>
-        </table>
-        <div class="row justify-content-between pt-2">
-            <div class="col-md-4">
-                <table class="table">
+                                <table id="invoice_fields" border="0" cellspacing="0" cellpadding="0" class="text-right float-right">
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-right"><strong>رقم فاتورة البيع#</strong></td>
+                                        <td style="padding-left:20px;" class="text-left">
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>التاريخ</strong></td>
+                                        <td style="padding-left:20px;" class="text-left">23/01/2023</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table cellspacing="0" cellpadding="2" border="0" width="100%" id="listing_table"
+                       class="invoice-listing-table total-table" style="">
                     <tbody>
                     <tr>
-                        <td>{{$lang->text('total_bill_discount')}}</td>
-                        <td>
-                            {{$saleInvoice->discount + $saleInvoice->total_bill}}
+
+                        <th width="" bgcolor="#E5E5E5" style="border-left:1px solid #555;">البند</th>
+                        <th width="80" bgcolor="#E5E5E5">سعر الوحدة</th>
+                        <th width="40" bgcolor="#E5E5E5">الكمية</th>
+                        <th width="60" bgcolor="#E5E5E5">المجموع</th>
+                    </tr>
+                    <tr>
+                        <td width="">بلح</td>
+                        <td width="80">15.20</td>
+                        <td width="40">5</td>
+                        <td width="60">76.00</td>
+                    </tr>
+
+
+                    <tr class="total-row">
+                        <td style="border:none" bgcolor="#FFF" colspan="1"></td>
+                        <td style="border-left:none;border-right:none;" colspan="2"><strong>الإجمالي:</strong></td>
+                        <td style="border-left:none;border-right:none;" class="text-left">76.00&nbsp;ج.م</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border:none" bgcolor="#FFF" colspan="1"></td>
+                        <td style="border-left:none;border-right:none;" colspan="2"><strong>مدفوعة:</strong></td>
+                        <td style="border-left:none;border-right:none;" class="text-left"><span dir="ltr">-76.00</span>&nbsp;ج.م
                         </td>
                     </tr>
                     <tr>
-                        <td>{{$lang->text('discount')}}</td>
-                        <td>{{$saleInvoice->discount}}</td>
+                        <td style="border:none" bgcolor="#FFF" colspan="1"></td>
+                        <td style="border-left:none;border-right:none;" colspan="2"><strong>المبلغ المستحق:</strong></td>
+                        <td style="border-left:none;border-right:none;" class="text-left">0.00&nbsp;ج.م</td>
                     </tr>
-                    <tr>
-                        <td>{{$lang->text('total_bill')}}</td>
-                        <td>{{$saleInvoice->total_bill}}</td>
-                    </tr>
+
                     </tbody>
                 </table>
-            </div>
-            <div class="col-md-6">
-                <h5><td>{{$lang->text('notes')}}</td></h5>
-                <div style = "border: 1px solid #ccc;height: 93px;border-radius:4px">
-                    <p class="px-2">
-                        {{$saleInvoice->notes}}
-                    </p>
+
+                <br>
+                <br>
+                <div class="notes-block">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <br>
+                <br>
+                <br>
             </div>
         </div>
+
     </div>
 
 
