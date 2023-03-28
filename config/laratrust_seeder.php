@@ -30,6 +30,7 @@ return [
             'journal'           => 'c,r,u,d',
             'store'             => 'c,r,u,d',
             'account'           => 'c,r,u,d',
+            'appinfo'           => 'r,u',
         ],
         'user' => [],
     ],
