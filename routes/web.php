@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppInfoController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Dashboard;
@@ -57,5 +58,12 @@ Route::group(
     Route::resource('/account', AccountController::class);
     Route::post('/getMainAccount',[AccountController::class,'getMainAccount']);
     Route::post('/getSubAccount',[AccountController::class,'getSubAccount']);
+
+    //App Info
+    Route::group(['prefix' => '/App_info'],function ()
+    {
+        Route::get('/show/{id}',[AppInfoController::class,'edit']);
+        Route::post('/update/{id}',[AppInfoController::class,'update']);
+    });
 });
 
