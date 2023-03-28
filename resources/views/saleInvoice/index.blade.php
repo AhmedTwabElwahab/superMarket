@@ -80,12 +80,6 @@
                                             <i class="fa fa-trash" style="color: red"></i>
                                         </button>
                                     </form>
-
-                                    <a href="{{route('saleInvoice.show',$saleInvoice -> id)}}"
-                                       class="btn box-shadow-3 " target="print_frame">
-                                        <i class="fa-solid fa-print"></i>
-                                    </a>
-                                    <iframe name="print_frame" width=0 height=0></iframe>
                                 </div>
                             </td>
                         </tr>

@@ -12,5 +12,5 @@ function printableDiv(printableAreaDivId)
 
 $(document).ready(function()
 {
-  printableDiv('Invoice');
+
 });
